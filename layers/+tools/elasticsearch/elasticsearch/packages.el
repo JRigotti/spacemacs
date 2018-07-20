@@ -16,12 +16,17 @@
 (defconst elasticsearch-packages
   '(
     es-mode
+    org
     ))
 
 (defun elasticsearch/init-es-mode ()
   "Initialize es mode"
   (use-package es-mode
-    :mode ("\\.es\\'" . es-mode)))
+    :mode ("\\.es\\'" . es-mode)
+    :interpreter ("es" . es-mode)))
 
+(defun elasticsearch/pre-init-org ()
+  (spacemacs|use-package-add-hook org
+    :post-config (add-to-list 'org-babel-load-languages '(elasticsearch . t))))
 
 ;;; packages.el ends here
