@@ -16,7 +16,6 @@
 (defconst elasticsearch-packages
   '(
     es-mode
-    yasnippet-snippets
     ))
 
 (defun elasticsearch/init-es-mode ()
@@ -24,6 +23,5 @@
   (use-package es-mode
     :mode ("\\.es\\'" . es-mode)))
 
-(defun elasticsearch/init-yasnippet-snippets ())
 
 ;;; packages.el ends here
